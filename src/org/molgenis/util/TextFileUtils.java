@@ -25,10 +25,9 @@ public class TextFileUtils
 	 */
 	public static int getNumberOfLines(File inFile) throws IOException
 	{
-		LineNumberReader lnr = null;
+		LineNumberReader lnr = new LineNumberReader(new FileReader(inFile));
 		try
 		{
-			lnr = new LineNumberReader(new FileReader(inFile));
 			lnr.skip(Long.MAX_VALUE);
 			return lnr.getLineNumber() + 1;
 		}
